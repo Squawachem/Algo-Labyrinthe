@@ -4,11 +4,11 @@
 #include	<stdio.h>
 #include	<stdlib.h>
 
-typedef struct	position
+typedef struct		position
 {
-	int			x;
-	int			y;	
-}				position;
+	int				x;
+	int				y;	
+}					position;
 
 typedef	struct	
 {
