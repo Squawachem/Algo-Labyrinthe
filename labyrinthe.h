@@ -5,7 +5,7 @@
 #include			<stdlib.h>
 #include			<time.h>
 
-#define				WALL_PROB	6 //probabilité de mettre un mur lors de la géné := 1 / WALL_PROB
+#define				WALL_PROB	3 //probabilité de mettre un mur lors de la géné := 1 / WALL_PROB
 enum { LW = 1, BW = 2, RW = 4, TW = 8 };
 
 typedef struct		position
@@ -31,5 +31,6 @@ char	bottom_wall(unsigned short cell);
 char	right_wall(unsigned short cell);
 char	top_wall(unsigned short cell);
 void	temp_display(labyrinthe L);
+void	display(labyrinthe L);
 
 #endif
