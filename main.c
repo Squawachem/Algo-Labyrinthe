@@ -11,7 +11,6 @@ int	main(int argc, char const *argv[])
 	}
 	srand(time(NULL));
 	init_lab(&L, atoi(argv[1]), atoi(argv[2]));
-	temp_display(L);
 	printf("\n\n\n");
 	display(L);
 	return 0;

@@ -1,31 +1,19 @@
-NAME =		labyrinthe.c
+NAME = labyrinthe
 
-OUT =		exec.out
+OUT = exec.out
 
-MAIN =		main.c
+CC = gcc
 
-CC =		gcc
+CFLAGS = -Wall -Wextra -Werror
 
-CFLAGS =	-Wall -Wextra -Werror
+SRCS = main.c gen_lab.c display_lab.c
 
-SOURCES =	
+all : $(NAME)
 
-OBJS =		$(SOURCES:.c=.o)
+$(NAME) :
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
-all :		$(NAME)
+fclean :
+	rm -f $(OUT) $(NAME)
 
-$(NAME) :	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
-
-exec :		$(NAME)
-			$(CC) $(CFLAGS) $(MAIN) $(NAME) -o $(OUT)
-
-norm :
-			norminette $(SOURCES)
-
-clean :
-			-rm $(OBJS)
-
-fclean :	clean
-			-rm -f $(OUT) $(NAME)
-
-re :		fclean all
+re : fclean all
