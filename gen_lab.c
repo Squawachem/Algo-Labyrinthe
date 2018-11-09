@@ -205,9 +205,6 @@ void	create_lab(labyrinthe *L, int lab_height, int lab_width)
 		}
 
 
-		system("/bin/stty cooked");
-
-
 		//usleep(500000);
 		compteur++;
 	}

@@ -8,6 +8,14 @@
 //#include			<termios.h>
 
 #define				WALL_PROB	3 //probabilité de mettre un mur lors de la géné := 1 / WALL_PROB
+
+
+char* dragon[15];
+char* knight[10];
+char* lab[6];
+char* oratoire[6];
+
+
 enum { LW = 1, BW = 2, RW = 4, TW = 8 };
 
 typedef struct		position
@@ -37,6 +45,11 @@ void	temp_display(labyrinthe L);
 void	display(labyrinthe L);
 void	creating_display(labyrinthe L, int half);
 void	create_lab(labyrinthe *L, int lab_height, int lab_width);
+void	init_displayer();
+void	menu_display(labyrinthe L, position pos_dragon, position pos_knight, position pos_lab, position pos_oratoire);
+
+void 	menu(labyrinthe* L);
+
 
 
 
