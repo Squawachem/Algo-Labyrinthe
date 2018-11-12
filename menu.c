@@ -17,7 +17,7 @@ void menu(labyrinthe* L)
 	pos_dragon.x 	= -40;
 	pos_dragon.y 	= 1;
 	pos_knight.x 	= 100;
-	pos_knight.y	= 1;
+	pos_knight.y	= 3;
 	pos_lab.x 		= 19;
 	pos_lab.y 		= 5;
 	pos_oratoire.x 	= 40;
@@ -185,14 +185,65 @@ void menu(labyrinthe* L)
 								if (ctemp=='t')
 								{
 									system("/bin/stty cooked");
-									pos_dragon.x 	= -40;
-									pos_dragon.y 	= 1;
-									pos_knight.x 	= 100;
-									pos_knight.y	= 1;
+
+									for(int i=0;i<3;i++)
+									{
+										pos_knight.x--;
+										menu_display(*L,pos_dragon,pos_knight,pos_lab,pos_oratoire);
+										usleep(micro_delay);
+									}
+									for(int i=0;i<8;i++)
+									{
+										pos_knight.x--;
+										pos_oratoire.x--;
+										menu_display(*L,pos_dragon,pos_knight,pos_lab,pos_oratoire);
+										usleep(micro_delay);
+										pos_knight.x--;
+										pos_oratoire.x--;
+										menu_display(*L,pos_dragon,pos_knight,pos_lab,pos_oratoire);
+										usleep(micro_delay);
+										pos_knight.x--;
+										pos_oratoire.x--;
+										pos_oratoire.y++;
+										pos_lab.y--;
+										menu_display(*L,pos_dragon,pos_knight,pos_lab,pos_oratoire);
+										usleep(micro_delay);
+									}
+									for(int i=0;i<33;i++)
+									{
+										pos_knight.x--;
+										menu_display(*L,pos_dragon,pos_knight,pos_lab,pos_oratoire);
+										usleep(micro_delay);
+									}
+									for(int i=0;i<30;i++)
+									{
+										pos_dragon.x--;
+										pos_knight.x--;
+										menu_display(*L,pos_dragon,pos_knight,pos_lab,pos_oratoire);
+										usleep(micro_delay);
+									}
 									pos_lab.x 		= 19;
-									pos_lab.y 		= 5;
 									pos_oratoire.x 	= 40;
-									pos_oratoire.y 	= 5;
+									for(int i=0;i<11;i++)
+									{
+										pos_dragon.x--;
+										pos_knight.x--;
+										menu_display(*L,pos_dragon,pos_knight,pos_lab,pos_oratoire);
+										usleep(micro_delay);
+										pos_dragon.x--;
+										pos_knight.x--;
+										menu_display(*L,pos_dragon,pos_knight,pos_lab,pos_oratoire);
+										usleep(micro_delay);
+										pos_dragon.x--;
+										pos_knight.x--;
+										pos_lab.y++;
+										pos_oratoire.y--;
+										menu_display(*L,pos_dragon,pos_knight,pos_lab,pos_oratoire);
+										usleep(micro_delay);
+									}
+									//usleep(2000000);
+									pos_dragon.x 	= -40;
+									pos_knight.x 	= 100;
 								}
 							}
 						}
