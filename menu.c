@@ -71,9 +71,11 @@ void menu(labyrinthe* L)
 
 		    	break;
 		    case 'l': // charger depuis un fichier
+			read_file(L);
 
 		        break;
 		    case 's': // sauvegarder dans un fichier
+			save_file(L);
 
 		        break;
 		    case 'x': // analyser le labyrinthe

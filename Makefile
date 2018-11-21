@@ -6,7 +6,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = main.c gen_lab.c display_lab.c menu.c
+SRCS = main.c gen_lab.c display_lab.c menu.c read_file.c save_file.c
 
 all : $(NAME)
 

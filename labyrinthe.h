@@ -6,6 +6,7 @@
 #include			<time.h>		//pour srand(tinme(NULL))
 #include			<unistd.h>		//pour usleep()
 //#include			<termios.h>
+#include 			<string.h>		//pour strcmp
 
 #define				WALL_PROB	3 //probabilité de mettre un mur lors de la géné := 1 / WALL_PROB
 
@@ -49,6 +50,10 @@ void	init_displayer();
 void	menu_display(labyrinthe L, position pos_dragon, position pos_knight, position pos_lab, position pos_oratoire);
 
 void 	menu(labyrinthe* L);
+
+void	read_file(labyrinthe *L);
+void	save_file(labyrinthe *L);
+
 
 
 
